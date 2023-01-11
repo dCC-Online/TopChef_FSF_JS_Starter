@@ -122,9 +122,9 @@ let todaysSpecialDish = {
 
 // <<<<<<<<<<<<<<<<< EXAMPLE FUNCTION <<<<<<<<<<<<<<<<<
 
-function findMexicanFood() {
+function findMexicanFood(allDishes) {
     alert("Searching for Mexican dishes...")
-    let results = dishes.filter(function (el) {
+    let results = allDishes.filter(function (el) {
         if (el.cuisine === "Mexican") {
             return true;
         } else {
