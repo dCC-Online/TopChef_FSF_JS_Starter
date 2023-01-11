@@ -172,6 +172,7 @@ function emailMessage(dishOfTheDay) {
     let message = `
     Hello valued customer!
 
+    Thank you for subscribing to email alert messages!
     Today's Dish of the day is:
 
     <DISH OF THE DAY HERE>
@@ -192,6 +193,7 @@ function textMessage(dishOfTheDay) {
     let message = `
     Master Chef -
 
+    This is an automated text message alert.
     Today's Dish of the day is:
 
     <DISH OF THE DAY HERE>
