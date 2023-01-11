@@ -7,7 +7,9 @@
     5. Complete the generateCuisineDishName() function
     6. Adjust the emailMessage() and textMessage() functions so the cuisine and dish name are included in the message
     7. Complete the generateMarketingMessage() function
-    8. Refactor the existing uses of prompt() to use customPrompt()
+    8. Call the appropriate function in runApp() to generate a marketing text message
+    9. Call the appropriate function in runApp() to generate a marketing email message
+    10. Refactor the existing uses of prompt() to use customPrompt()
 */
 
 let dishes = [
@@ -131,7 +133,7 @@ function findMexicanFood() {
     });
     // TODO #1: Step through this function with the debugger to get a better understanding of the structure of this function
 
-    // Debug tip: Place a Breakpoint on the console.log AFTER the filter, then hover over "results" to see results of filter 
+    // Debug tip: Place a Breakpoint on the alert AFTER the filter, then hover over "results" to see results of filter 
     // without having to step through the whole thing!
     alert("Found all Mexican dishes!  Check the console for full output.")
     return results
@@ -163,13 +165,6 @@ function generateCuisineDishName(allDishes) {
     alert("Successfully combined cuisine and dish names!  Check the console for full output.")
 }
 
-function generateMarketingMessage(dishOfTheDay, messageTypeCallback) {
-    alert('Sending final message to all 389 customers...')
-    // TODO #7: Call the passed-in callback function on the dishOfTheDay.  Save the result as a variable
-    // Then, log that result to the console
-    alert('Success!  Check the console for a copy of the final marketing message!')
-}
-
 // <<<<<<<<<<<<<<<<< EMAIL AND TEXT MARKETING MESSAGES <<<<<<<<<<<<<<<<<
 
 function emailMessage(dishOfTheDay) {
@@ -184,7 +179,7 @@ function emailMessage(dishOfTheDay) {
     We hope to see you in soon!
 
     Kindly,
-    Master Sushi Chef David
+    Master Chef David
 
     (To unsubscribe hit the 'unsubscribe' button below)
     `;
@@ -212,10 +207,17 @@ function textMessage(dishOfTheDay) {
     return message;
 }
 
+function generateMarketingMessage(dishOfTheDay, messageTypeCallback) {
+    alert('Sending final message to all 389 customers...')
+    // TODO #7: Call the passed-in callback function on the dishOfTheDay.  Save the result as a variable
+    // Then, log that result to the console
+    alert('Success!  Check the console for a copy of the final marketing message!')
+}
+
 // <<<<<<<<<<<<<<<<< CUSTOM PROMPT FUNCTION <<<<<<<<<<<<<<<<<
 
 function customPrompt(promptQuestion, arrayOfValidResponses) {
-    // TODO #8: Replace all instances of prompt() in the above functions with customPrompt()
+    // TODO #10: Replace all instances of prompt() in the above functions with customPrompt()
     let response
     while (!arrayOfValidResponses.includes(response)) {
         response = prompt(promptQuestion)
@@ -257,10 +259,12 @@ function runApp(allDishes, specialDish) {
             console.log(concatenatedDishes)
             break
         case "6":
-            generateMarketingMessage(specialDish, textMessage)
+            // TODO #8: Call the appropriate function to generate the marketing text message.  
+            // You will need to provide today's dish and the appropriate callback function as arguments!
             break
         case "7":
-            generateMarketingMessage(specialDish, emailMessage)
+            // TODO #9: Call the appropriate function to generate the marketing email message.  
+            // You will need to provide today's dish and the appropriate callback function as arguments!
             break
         case "Exit":
             alert("Thank you for using the Recipe Searching Application!  Goodbye!")
